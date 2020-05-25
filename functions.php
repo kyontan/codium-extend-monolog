@@ -383,12 +383,6 @@ endswitch;
 }
 endif;
 
-//custom menu support
-add_action( 'init', 'codium_extend_register_my_menu' );
-function codium_extend_register_my_menu() {
-  register_nav_menu( 'main-menu', __( 'Main Menu', 'codium_extend' ) );
-}
-
 //font for the Title
 function codium_extend__google_font() { ?>
   <link href="//fonts.googleapis.com/css?family=PT+Sans&amp;subset=latin" rel="stylesheet">

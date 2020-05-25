@@ -21,6 +21,6 @@
 <div class="clear"></div>
 <div id="wrapper" class="container">
     <div id="access" class="sixteen columns">
-      <?php wp_nav_menu(array( 'container_class' => 'menu-header', 'theme_location' => 'primary-menu',)); ?>
+      <?php wp_nav_menu(array( 'container_class' => 'menu-header', 'theme_location' => 'main-menu',)); ?>
     </div><!--  #access -->
 <div class="clear"></div>
