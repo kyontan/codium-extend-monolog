@@ -43,7 +43,7 @@ h3.widgettitle { color: #444; }
 
 /* header */
 header { margin: 4px 0 10px; padding: 0; background: transparent }
-#description { color: #444; font-size: 1.3em; margin: .2em 0; }
+.description { color: #444; font-size: 1.3em; margin: .2em 0; }
 
 /* Navigation */
 nav#nav-head { display: none; }
