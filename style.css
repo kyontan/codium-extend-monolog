@@ -12,14 +12,6 @@ License: GNU General Public License v2.0
 License URI: http: //www.gnu.org/licenses/gpl-2..html
 */
 
-@font-face {
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: 300;
-  src: url(/wp-content/themes/codium-extend/webfonts/Nunito-Light.eot);
-  src: local("Nunito-Light"), url(/wp-content/themes/codium-extend/webfonts/Nunito-Light.eot) format("embedded-opentype"), url(/wp-content/themes/codium-extend/webfonts/Nunito-Light.woff) format("woff");
-}
-
 body { font-size: 62.5%; font-family: "Shin Maru Go Light JIS2004", "游ゴシック体", "Yu Gothic", "YuGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS Pゴシック", "MS PGothic", sans-serif; color: #444; background-color: #fff; background-repeat: repeat-x; background-attachment: fixed; margin: 0; }
 blockquote { border-left: .4em solid #eee; margin-left: 1.5em; padding-left: 1em }
 abbr, acronym { border-bottom: 1px dotted #666; cursor: help; }
@@ -74,7 +66,7 @@ h5 { font-size: 1.3em; }
 h6 { font-size: 1.1em; }
 h1, h2, h3, h4, h5, h6 { font-weight: normal; letter-spacing: -.05em; margin-bottom: .5em }
 /* b, strong { font-family: "游ゴシック体", "Yu Gothic", "YuGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS Pゴシック", "MS PGothic", sans-serif; } */
-code { font-family: Droid Sans Mono, 'DroidSansMonoRegular', 'Courier New', monospace; }
+code { font-family: 'Andale mono', 'Source Code Pro', 'Consolas', monospace; }
 #footer { color: #bbb; margin: auto; padding: 3em 0 .5em 2em; clear: both;  text-align: left; font-size: 1.1em; line-height: 1.5em; }
 #footer a, #footerlink a { color: #bbb; text-decoration: none; /*outline: none; */ }
 #footer a:hover, #footer a:focus, #footerlink a:hover, #footerlink a:focus { background: #f3f3f3; color: #444; text-decoration: none; /* outline: 0 */ }

@@ -383,9 +383,9 @@ endswitch;
 }
 endif;
 
-//font for the Title
+//font for the title and code blocks
 function codium_extend__google_font() { ?>
-  <link href="//fonts.googleapis.com/css?family=PT+Sans&amp;subset=latin" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Source+Code+Pro&display=swap" rel="stylesheet">
 <?php
 }
 
