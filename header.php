@@ -8,20 +8,19 @@
 <?php wp_head() ?>
 </head>
 
-<body <?php body_class(); ?>> 
+<body <?php body_class(); ?>>
 
 <div id="wrapperpub" class="container">
-	<div id="header">
-		<div class="sixteen columns">	
-			<h1 id="blog-title" class="blogtitle"><a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php bloginfo('name') ?>"><?php bloginfo('name') ?></a></h1>
-			<div class="description"><?php bloginfo('description'); ?> </div>
-		</div><!-- sixteen columns -->		
-	</div><!--  #header -->	
-</div><!--  #wrapperpub -->			
+  <div id="header">
+    <div class="sixteen columns">
+      <h1 id="blog-title" class="blogtitle"><a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php bloginfo('name') ?>"><?php bloginfo('name') ?></a></h1>
+      <div class="description"><?php bloginfo('description'); ?> </div>
+    </div><!-- sixteen columns -->
+  </div><!--  #header -->
+</div><!--  #wrapperpub -->
 <div class="clear"></div>
-<div id="wrapper" class="container">	
-		<div id="access" class="sixteen columns">
-			<?php wp_nav_menu(array( 'container_class' => 'menu-header', 'theme_location' => 'primary-menu',)); ?>			
-		</div><!--  #access -->	
-<div class="clear"></div>		
-	
+<div id="wrapper" class="container">
+    <div id="access" class="sixteen columns">
+      <?php wp_nav_menu(array( 'container_class' => 'menu-header', 'theme_location' => 'primary-menu',)); ?>
+    </div><!--  #access -->
+<div class="clear"></div>
