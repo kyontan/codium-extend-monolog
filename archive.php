@@ -31,7 +31,7 @@
     </div>
   </article>
 
-  <div class="linebreak clear"></div>
+  <div class="linebreak"></div>
 
   <?php endwhile; endif ?>
 
