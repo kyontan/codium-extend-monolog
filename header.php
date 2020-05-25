@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
+<link rel="stylesheet" href="https://cdn.rawgit.com/filipelinhares/ress/master/dist/ress.min.css">
 <script src="//typesquare.com/3/tsst/script/ja/typesquare.js?cj4l1q-4Otw%3D" charset="utf-8"></script>
 <?php wp_head() ?>
 </head>
