@@ -15,6 +15,11 @@ Template Name: archives
     <?php codium_extend_category_list_links() ?>
     <?php codium_extend_tag_list_links() ?>
   </article>
+
+  <?php if ($query->current_post < ($query->post_count - 1)) { ?>
+  <div class="linebreak"></div>
+  <?php } ?>
+
   <?php endwhile; endif ?>
 
   <div class="center">

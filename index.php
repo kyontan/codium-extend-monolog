@@ -18,8 +18,6 @@
         <?php the_excerpt(); ?>
       </a>
     </div>
-    <div class="clear"></div>
-    <div class="entry-meta"></div>
   </article>
   <!-- End post -->
   <div class="linebreak"></div>
