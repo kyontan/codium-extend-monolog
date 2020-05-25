@@ -14,12 +14,12 @@
 <?php wp_link_pages("          <div class='page-link'>".__('Pages: ', 'codium_extend'), "</div>\n", 'number'); ?>
 <?php printf(__('Back to post : ', 'codium_extend')) ?><a href="<?php echo get_permalink($post->post_parent) ?>" rev="attachment"><?php echo get_the_title($post->post_parent) ?></a> 
     </div>
-    <div class="five columns">
+    <span>
     <?php previous_image_link('thumbnail') ?>
-    </div>
-    <div class="five columns">
+    </span>
+    <span>
     <?php next_image_link('thumbnail') ?>
-    </div>
+    </span>
     <div class="clear"></div>
 
     <div class="entry-meta">

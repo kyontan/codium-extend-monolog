@@ -213,50 +213,48 @@ img, img.alignleft, img.alignright, img.aligncenter { max-width: 100%; height: a
 iframe, object, embed { max-width: 100%; }
 
 
-/*searchbox*/
-input[type="search"]{ border:1px solid #CCCCCC; color:#516064; font-size: 1.2em; padding:8px; width: calc(100% - 90px); /* outline: none; */ }
+/* searchbox */
+input[type="search"] { border:1px solid #CCCCCC; color:#516064; font-size: 1.2em; padding:8px; width: calc(100% - 90px); /* outline: none; */ }
 label { font-weight: bold; color: #FFFFFF; }
 
-/*category color*/
-span.cat-links a, span.tag-links a { transition: all .18s ease; }
+/* category color */
+span.cat-links a,
+span.tag-links a { transition: all .18s ease; font-size: 1.2em; line-height: 3em; border-radius: 3px; }
 
-span.cat-links a { color: #FFF; font-size: 1.2em; line-height: 3em; background: #444; padding: 8px; border-radius: 3px; }
-span.cat-links a { color: #FFF; font-size: 1.2em; line-height: 3em; background: #444; padding: 8px; border-radius: 3px; }
-span.tag-links a { background: #FFF; font-size: 1.2em; line-height: 3em; border: 2px solid #bbb; color: #444; padding: 6px; border-radius: 3px; }
+span.cat-links a { color: #FFF; background: #444; padding: 8px; }
+span.tag-links a { color: #444; background: #FFF; padding: 6px; border: 2px solid #bbb; }
 
-span.tag-links a:hover, span.tag-links a:focus, span.cat-links a:hover, span.cat-links a:focus { background: #bbb; color: #fff; }
+span.cat-links a:hover, span.cat-links a:focus,
+span.tag-links a:hover, span.tag-links a:focus { background: #bbb; color: #fff; }
 
 span.tag-links a::before { content: '#'; }
 
-/*Image sur homepage*/
+/* Image sur homepage */
 .imgshadow img { box-shadow: 0 1px 3px rgba(0, 0, 0, .8); }
 
-/*Table*/
+/* Table */
 table { border-collapse: collapse; margin-bottom: .5em }
 th { font-size: 1.2em; padding: 4px 6px; border-width: 1px; border-style: solid }
 td { padding: 4px; border-width: 1px; border-style: solid }
 
-/*definition*/
+/* definition */
 dl { margin-bottom: 24px }
 dt { font-weight: bold }
 dd { margin-bottom: 18px }
-
-.mobileon { display: none }
 
 /* #Base 960 Grid
 ================================================== */
 
 body { position: relative; width: 960px; margin: 0 auto; padding: 0; }
-.column, .columns { display: inline; /* float: left; margin: 10px; */ }
 
 /* Base Grid */
 main  { float: left; width: 640px; }
-aside#sidebar, #access { float: right; width: 300px; }
-
+aside#sidebar, nav { float: right; width: 300px; }
+aside p { margin: 1em 0; }
 
 @media only screen and (min-width: 960px) {
   body {
-    /*padding: 0 2em;*/
+    /* padding: 0 2em; */
   }
 
   main {

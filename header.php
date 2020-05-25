@@ -11,14 +11,12 @@
 <body <?php body_class(); ?>>
 
 <header>
-  <div class="sixteen columns">
-    <h1 id="blog-title" class="blogtitle"><a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php bloginfo('name') ?>"><?php bloginfo('name') ?></a></h1>
-    <div class="description"><?php bloginfo('description'); ?> </div>
-  </div><!-- sixteen columns -->
+  <h1 id="blog-title" class="blogtitle"><a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php bloginfo('name') ?>"><?php bloginfo('name') ?></a></h1>
+  <div class="description"><?php bloginfo('description'); ?> </div>
 </header>
 <div class="clear"></div>
 <div id="wrapper" class="container">
-    <div id="access" class="sixteen columns">
-      <?php wp_nav_menu(array( 'container_class' => 'menu-header', 'theme_location' => 'main-menu',)); ?>
-    </div><!--  #access -->
+  <div id="access">
+    <?php wp_nav_menu(array( 'container_class' => 'menu-header', 'theme_location' => 'main-menu',)); ?>
+  </div><!--  #access -->
 <div class="clear"></div>
