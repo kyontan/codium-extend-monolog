@@ -11,8 +11,8 @@
 
   <!-- Begin post -->
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf(__('Permalink to %s', 'codium_extend'), esc_html(get_the_title(), 1)) ?>" rel="bookmark"><?php the_title() ?></a></h2>
     <div><?php codium_extend_posted_on(); ?></div>
+    <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf(__('Permalink to %s', 'codium_extend'), esc_html(get_the_title(), 1)) ?>" rel="bookmark"><?php the_title() ?></a></h2>
     <?php codium_extend_category_list_links() ?>
     <?php codium_extend_tag_list_links() ?>
 
