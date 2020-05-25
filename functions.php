@@ -81,7 +81,7 @@ codium_extend is free software: you can redistribute it and/or modify it under t
   function codium_extend_header_style() {
     if (get_header_image() != '') { ?>
 <style>
-  div#header {
+  header {
     background: url(<?php header_image(); ?>); height :230px; -moz-border-radius-topleft:6px;border-top-left-radius:6px;-moz-border-radius-topright:6px;border-top-right-radius:6px;
   }
   <?php if ( 'blank' == get_header_textcolor() ) { ?>
