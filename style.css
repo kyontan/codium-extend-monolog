@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; letter-spacing: -.05em; margin-bot
 /* b, strong { font-family: "游ゴシック体", "Yu Gothic", "YuGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS Pゴシック", "MS PGothic", sans-serif; } */
 code { font-family: 'Andale mono', 'Source Code Pro', 'Consolas', monospace; }
 #footer { color: #bbb; margin: auto; padding: 3em 0 .5em 2em; clear: both;  text-align: left; font-size: 1.1em; line-height: 1.5em; }
-#footer a, #footerlink a { color: #bbb; text-decoration: none; /*outline: none; */ }
+#footer a, #footerlink a { color: #bbb; text-decoration: none; /* outline: none; */ }
 #footer a:hover, #footer a:focus, #footerlink a:hover, #footerlink a:focus { background: #f3f3f3; color: #444; text-decoration: none; /* outline: 0 */ }
 #footer p, #footerlink p { color: #bbb; }
 #footerlink { color: #bbb; margin: 0 .5em 2em .5em; clear: both;  text-align: left; font-size: 1.1em; line-height: 1em; }
@@ -177,7 +177,7 @@ div.formcontainer { width: 100% }
 .four04 #sidebar { clear: right; display: block }
 .four04 { width: 590px; text-align: left }
 
-/*widget*/
+/* widget */
 .widgetblock img { max-width: 300px; height: auto }
 .widgetblock { font-size: 1.4em; background: transparent; margin-bottom: .5em; padding-top: .5em; }
 .widgettitleb { padding-bottom: .1em; color: #444; border-bottom: 2px solid #f1f2f4; }
@@ -186,21 +186,21 @@ div.formcontainer { width: 100% }
 /* date */
 .entry-date { color: #bbb; margin: 0; font-size: 1rem; }
 
-/*Gallery Shorcode*/
+/* Gallery Shorcode */
 .gallery { margin: 0 auto; padding: 10px 0 }
 .attachment-medium { max-width: 90%; height: auto; box-shadow: 0 1px 3px rgba(0, 0, 0, .8); }
 .gallery .gallery-caption { color: #888; font-size: 1.2em; margin-bottom: 12px }
 .gallery br+br { display: none }
 .attachment-thumbnail { max-width: 90%; height: auto; box-shadow: 0 1px 3px rgba(0, 0, 0, .8); }
 
-/*line break style*/
+/* line break style */
 .linebreak { padding : 1em 0 .5em; border-top: 2px solid #f1f2f4; }
 h2.single-entry-title + .linebreak { padding: 0; }
 
-/*Gravatar*/
+/* Gravatar */
 img.avatar { float: left; margin-right: 5px; padding-right: .5em; }
 
-/*Caption and images*/
+/* Caption and images */
 .wp-caption { /* background: #ececec; */ line-height: 18px; margin-left: auto !important; margin-right: auto !important; margin-bottom: 20px; text-align: center; padding: 0px; max-width: 100%; }
 .wp-caption img { margin: 10px 10px; max-width: 90%; height: auto; }
 .wp-caption p.wp-caption-text { color: #888; font-size: 1.2em; margin: 5px 0; }
@@ -285,7 +285,7 @@ aside p { margin: 1em 0; }
 }
 
 
-/*  #Mobile (Portrait)
+/* #Mobile (Portrait)
 ================================================== */
 
 /* Note: Design for a width of 320px */
@@ -299,20 +299,6 @@ aside p { margin: 1em 0; }
   #access { float: none; width: auto; }
 
   .wp-pagenavi, .mobileoff { display: none }
-  /*#accessmobile { background: #f1f2f4; display: block; float: left; width: 100%; margin: 0 auto; text-transform: lowercase; }
-  #accessmobile .menu-header { font-size: 1.5em; margin-left: 0px; }
-  #accessmobile .menu-header ul { list-style-image: url(/wp-content/themes/codium-extend/images/arrow.png); margin: 0; padding-left: 0px; }
-  #accessmobile .menu-header li { float: left; position: relative; width: 100%; list-style-position: inside; }
-  #accessmobile a { color: #444; display: block; line-height: 40px; text-decoration: none; padding: 0 10px; }
-  #accessmobile li:hover > a, #accessmobile ul ul:hover > a { background: #444; background: rgba(0, 0, 0, .7); color: #fff; transition: all .5s ease-in-out; }
-  #accessmobile ul li:hover > ul { display: block; }
-  #accessmobile ul li.current_page_item > a,
-  #accessmobile ul li.current-menu-ancestor > a,
-  #accessmobile ul li.current-menu-item > a,
-  #accessmobile ul li.current-menu-parent > a,
-  #accessmobile ul li a:hover { background: #444; background: rgba(0, 0, 0, .7); color: #fff; }
-  */
-  .mobileon { width: auto; }
   .navigation_mobile { display: inline }
   #footerlink { margin-bottom: 0; }
 }
@@ -330,7 +316,7 @@ aside p { margin: 1em 0; }
 ================================================== */
 
 /* Self Clearing Goodness */
-/*.container::after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }*/
+/* .container::after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; } */
 
 /* You can also use a <br class="clear" /> to clear columns */
 .clear {
