@@ -1,5 +1,5 @@
 <?php get_header( ); ?>
-<main>
+<main id="index">
   <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post(); ?>
 
@@ -13,11 +13,16 @@
       <?php the_content(''.__('read more <span class="meta-nav">&raquo;</span>', 'codium_extend').''); ?>
       <?php wp_link_pages("      <div class='page-link'>".__('Pages: ', 'codium_extend'), "</div>\n", 'number'); ?>
     </div>
+    <div class="entry-excerpt">
+      <a href="<?php the_permalink() ?>">
+        <?php the_excerpt(); ?>
+      </a>
+    </div>
     <div class="clear"></div>
     <div class="entry-meta"></div>
   </article>
   <!-- End post -->
-  <div class="linebreak clear"></div>
+  <div class="linebreak"></div>
   <?php endwhile; endif ?>
 
   <div class="center">

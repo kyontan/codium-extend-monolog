@@ -115,6 +115,8 @@ aside a:hover, aside a:focus { color: #0299FF; }
 .page-link a:active,
 .page-link a:hover, .page-link a:focus { background: #f3f3f3; color: #0299FF; text-decoration: none; outline: 0 }
 
+.entry-excerpt { display: none; }
+
 /* Page navigation */
 .navigation { /* height: 2em; */ width: auto; font-size: 1.5em; line-height: 1.5em }
 .navigation a { color: #777 }
@@ -187,7 +189,7 @@ div.formcontainer { width: 100% }
 .screen-reader-text { display: none }
 
 /* date */
-.entry-date { color: #bbb; margin: 0; font-size: 1rem; }
+.entry-date { color: #999; margin: 0; font-size: 1rem; }
 
 /* Gallery Shorcode */
 .gallery { margin: 0 auto; padding: 10px 0 }
@@ -296,17 +298,36 @@ aside p { margin: 1em 0; }
 @media only screen and (max-width: 767px) {
   body { width: 100%; font-size: 54%; }
   header { margin-left: 2%; }
-  aside, main { width: 95%; margin-left: 2%; }
 
-  aside { float: left; }
+  nav li a, nav li a:visited { line-height: 32px; }
+
+  aside, main { width: 95%; margin-left: 2%; }
+  main { margin-top: 1em; }
+  main#index article .entry-content { display: none; }
+  main#index article .entry-excerpt { display: initial; font-size: 0.7rem; }
+  main#index article .entry-excerpt a,
+  main#index article .entry-excerpt a:hoger
+  main#index article .entry-excerpt a:focus { color: #1a1a1a; }
+
+  h2.entry-title,
+  h2.page-title { font-size: 2em; }
+
+  aside { border-top: 1px dashed #1a1a1a; }
 
   nav#nav-head { display: initial; }
   nav#nav-side { display: none; }
 
-  nav { float: none; width: auto; }
+  .entry-date { font-size: 0.7rem;  }
+  span.cat-links a { padding: 5px; }
+  span.tag-links a { padding: 4px; border: 1px solid #bbb; }
 
-  .wp-pagenavi, .mobileoff { display: none }
-  .navigation_mobile { display: inline }
+  .linebreak { display: none; }
+
+	.entry-content p:first-of-type { margin-top: 0; }
+
+  .navigation a { display: inline-block; background: #444; background: rgba(0, 0, 0, .7); color: #fff; margin-bottom: 4px; padding: 10px; }
+
+  .wp-pagenavi { display: none }
   #footerlink { margin-bottom: 0; }
 }
 
