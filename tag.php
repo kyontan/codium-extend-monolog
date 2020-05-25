@@ -15,7 +15,6 @@
     <div><?php codium_extend_posted_on(); ?></div>
     <?php codium_extend_category_list_links() ?>
     <?php codium_extend_tag_list_links() ?>
-    <div class="entry-date"><?php codium_extend_print_datetime() ?></div>
 
     <div class="entry-content">
     <?php the_content(''.__('read more <span class="meta-nav">&raquo;</span>', 'codium_extend').''); ?>
