@@ -1,5 +1,14 @@
 # Codium Extend
 
+## Changes from original
+
+- Japanese translation
+- Archives for all posts
+- Changed appearance around page title and footer
+  - Categories / Tags are shown below title
+- Dropped support for bottom sidebar
+- ...
+
 ## Original readme (from [wordpress.org](https://wordpress.org/themes/codium-extend/))
 
 Codium Extend is a minimalist theme for wordpress and ready for all the wordpress 3.+ feature like custom menus, colors or background. Light colors and white is perfect for having a really nice blog!
@@ -27,3 +36,16 @@ More information here : http://codiumextend.code-2-reduction.fr/
 1.1.3 : correction for the category span on the index.php
 1.1.3 : Better support for mobile with a real responsive css
 1.2 : Update in order to fit with wordpress 3.9
+
+## Font License
+
+These fonts are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
+
+You can use them freely in your products & projects - print or digital, commercial or otherwise. However, you can't sell the fonts on their own.
+
+This isn't legal advice, please consider consulting a lawyer and see the full license for all details.
+
+## Normalize.css
+
+- https://github.com/necolas/normalize.css
+- Licensed MIT by Nicolas Gallagher and Jonathan Neal

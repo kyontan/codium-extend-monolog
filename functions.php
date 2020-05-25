@@ -6,10 +6,8 @@ codium_extend is free software: you can redistribute it and/or modify it under t
 
 */
 
-
   if ( ! function_exists( 'codium_extend_setup' ) ) :
-  function codium_extend_setup() {
-
+    function codium_extend_setup() {
       // Make theme available for translation
       // Translations can be filed in the /languages/ directory
       load_theme_textdomain( 'codium_extend', get_template_directory() . '/languages' );
@@ -18,66 +16,62 @@ codium_extend is free software: you can redistribute it and/or modify it under t
       add_editor_style( 'editor-style.css' );
 
       //feed
-    add_theme_support('automatic-feed-links');
+      add_theme_support('automatic-feed-links');
 
-    add_theme_support( 'html5', array(
-      'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
-    ) );
+      add_theme_support( 'html5', array(
+        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+      ) );
 
-    register_nav_menus( array(
-      'primary'   => __( 'Top primary menu', 'codium_extend' ),
-    ) );
+      register_nav_menus( array(
+        'main-menu' => __( 'Main menu', 'codium_extend' ),
+      ) );
 
-      // Post thumbnails support for post
-    add_theme_support( 'post-thumbnails', array( 'post' ) ); // Add it for posts
-    set_post_thumbnail_size( 220, 165, true ); // Normal post thumbnails
+        // Post thumbnails support for post
+      add_theme_support( 'post-thumbnails', array( 'post' ) ); // Add it for posts
+      set_post_thumbnail_size( 220, 165, true ); // Normal post thumbnails
 
-      // This theme allows users to set a custom background
-    add_theme_support( 'custom-background' );
+        // This theme allows users to set a custom background
+      add_theme_support( 'custom-background' );
 
-      // This theme allows users to set a custom header image
-      //custom header for 3.4 and compatability for prior version
+        // This theme allows users to set a custom header image
+        //custom header for 3.4 and compatability for prior version
 
-    $args = array(
-            'width'               => 980,
-            'height'              => 250,
-            'default-image'       => '',
-            'default-text-color'  => '444',
-            'wp-head-callback'    => 'codium_extend_header_style',
-            'admin-head-callback' => 'codium_extend_admin_header_style',
+      $args = array(
+        'width'               => 980,
+        'height'              => 250,
+        'default-image'       => '',
+        'default-text-color'  => '444',
+        'wp-head-callback'    => 'codium_extend_header_style',
+        'admin-head-callback' => 'codium_extend_admin_header_style',
+      );
 
-    );
-
-    $args = apply_filters( 'codium_extend_custom_header', $args );
+      $args = apply_filters( 'codium_extend_custom_header', $args );
 
       add_theme_support( 'custom-header', $args );
-
-
-  }
+    }
   endif; // codium_setup
   add_action( 'after_setup_theme', 'codium_extend_setup' );
 
-    add_theme_support( 'title-tag' );
+  add_theme_support( 'title-tag' );
 
-    if ( ! function_exists( '_wp_render_title_tag' ) ) {
-        function theme_slug_render_title() {
-    ?>
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
-    <?php
-        }
-        add_action( 'wp_head', 'theme_slug_render_title' );
-    }
+  if ( ! function_exists( '_wp_render_title_tag' ) ) {
+      function theme_slug_render_title() {
+  ?>
+  <title><?php wp_title( '|', true, 'right' ); ?></title>
+  <?php
+      }
+      add_action( 'wp_head', 'theme_slug_render_title' );
+  }
 
   if ( ! function_exists( 'codium_extend_scripts_styles' ) ) :
-  function codium_extend_scripts_styles() {
+    function codium_extend_scripts_styles() {
 
       if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-      wp_enqueue_script( 'comment-reply' );
+        wp_enqueue_script( 'comment-reply' );
 
-    // Loads our main stylesheet.
-    wp_enqueue_style( 'codium_extend-style', get_stylesheet_uri(), array(), '2014-06-30' );
-
-  }
+      // Loads our main stylesheet.
+      wp_enqueue_style( 'codium_extend-style', get_stylesheet_uri(), array(), '2014-06-30' );
+    }
   endif; // codium_scripts_styles
   add_action( 'wp_enqueue_scripts', 'codium_extend_scripts_styles' );
 
@@ -85,42 +79,40 @@ codium_extend is free software: you can redistribute it and/or modify it under t
   if ( ! function_exists( 'codium_extend_header_style' ) ) :
   // gets included in the site header
   function codium_extend_header_style() {
-      if (get_header_image() != ''){
-      ?>
-<style type="text/css">
-        div#header {
-            background: url(<?php header_image(); ?>); height :230px; -moz-border-radius-topleft:6px;border-top-left-radius:6px;-moz-border-radius-topright:6px;border-top-right-radius:6px;
-        }
-        <?php if ( 'blank' == get_header_textcolor() ) { ?>
-    h1.blogtitle,.description { display: none; }
-    <?php } else { ?>
-    h1.blogtitle a,.description { color:#<?php header_textcolor() ?>; }
-      <?php
-    } ?>
+    if (get_header_image() != '') { ?>
+<style>
+  div#header {
+    background: url(<?php header_image(); ?>); height :230px; -moz-border-radius-topleft:6px;border-top-left-radius:6px;-moz-border-radius-topright:6px;border-top-right-radius:6px;
+  }
+  <?php if ( 'blank' == get_header_textcolor() ) { ?>
+  h1.blogtitle,.description { display: none; }
+  <?php } else { ?>
+  h1.blogtitle a,.description { color:#<?php header_textcolor() ?>; }
+    <?php
+  } ?>
 </style>
 <?php }
   if ( 'blank' == get_header_textcolor() ) { ?>
-<style type="text/css">
+<style>
   h1.blogtitle,.description,.blogtitle { display: none; }
 </style>
 <?php } else { ?>
-<style type="text/css">
-  h1.blogtitle a,.blogtitle a,.description,.menu-toggle:before, .search-toggle:before,.site-navigation a { color:#<?php header_textcolor() ?>; }
+<style>
+  h1.blogtitle a,.blogtitle a,.description,.menu-toggle:before, .search-toggle:before, .site-navigation a { color:#<?php header_textcolor() ?>; }
   .site-navigation a:hover { background:#<?php header_textcolor() ?>; }
 </style>
 <?php }
   }
-  endif; // codium_header_style
+endif; // codium_header_style
 
-  if ( ! function_exists( 'codium_extend_admin_header_style' ) ) :
+if ( ! function_exists( 'codium_extend_admin_header_style' ) ) :
   // gets included in the admin header
-  function codium_extend_admin_header_style() {
-     ?>
-<style type="text/css">
-        #headimg {
-            width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-            height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
-        }
+  function codium_extend_admin_header_style() { ?>
+<style>
+  #headimg {
+    width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
+    height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
+  }
 </style>
 <?php
   }
@@ -187,6 +179,7 @@ function codium_extend_date_classes( $t, &$c, $p = '' ) {
   $c[] = $p . 'h' . gmdate( 'H', $t ); // Hour
 }
 
+
 // For category lists on category archives: Returns other categories except the current one (redundant)
 function codium_extend_cats_meow($glue) {
   $current_cat = single_cat_title( '', false );
@@ -198,6 +191,7 @@ function codium_extend_cats_meow($glue) {
       break;
     }
   }
+
   if ( empty($cats) )
     return false;
 
@@ -224,72 +218,94 @@ function codium_extend_tag_ur_it($glue) {
 if ( ! function_exists( 'codium_extend_posted_on' ) ) :
 // data before post
 function codium_extend_posted_on() {
-  printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s.', 'codium_extend' ),
-    'meta-prep meta-prep-author',
-    sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-      get_permalink(),
-      esc_attr( get_the_time() ),
-      get_the_date()
-    ),
-    sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
-      get_author_posts_url( get_the_author_meta( 'ID' ) ),
-      sprintf( esc_attr__( 'View all posts by %s', 'codium_extend' ), get_the_author() ),
-      get_the_author()
-    )
+  printf( '<a class="permalink" href="%1$s"><span class="entry-date">',
+    get_permalink()
   );
+
+  codium_extend_print_datetime();
+
+  printf( '</span></a>');
 }
 endif;
 
 if ( ! function_exists( 'codium_extend_posted_in' ) ) :
-// data after post
-function codium_extend_posted_in() {
-  // Retrieves tag list of current post, separated by commas.
-  $tag_list = get_the_tag_list( '', ', ' );
-  if ( $tag_list ) {
-    $posted_in = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'codium_extend' );
-  } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-    $posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'codium_extend' );
-  } else {
-    $posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'codium_extend' );
+  // data after post
+  function codium_extend_posted_in() {
+    codium_extend_category_list();
+    codium_extend_tag_list('<br>');
   }
-  // Prints the string, replacing the placeholders.
-  printf(
-    $posted_in,
-    get_the_category_list( ', ' ),
-    $tag_list,
-    get_permalink(),
-    the_title_attribute( 'echo=0' )
-  );
-}
 endif;
 
+if ( ! function_exists( 'codium_extend_category_list' ) ) :
+  function codium_extend_category_list($before = '', $after = '') {
+    if ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
+      printf(
+        __( '%2$sCategory: %1$s%3$s', 'codium_extend' ),
+        get_the_category_list( ', ' ),
+        $before,
+        $after
+      );
+    }
+  }
+endif;
+
+if ( ! function_exists( 'codium_extend_tag_list' ) ) :
+  function codium_extend_tag_list($before = '', $after = '') {
+    // Retrieves tag list of current post, separated by commas.
+    $tag_list = get_the_tag_list( '', ', ' );
+    if ( $tag_list ) {
+      printf(
+        __( '%2$sTags: %1$s%3$s', 'codium_extend' ),
+        $tag_list,
+        $before,
+        $after
+      );
+    }
+  }
+endif;
+
+if ( ! function_exists( 'codium_extend_category_list_links' ) ) :
+  function codium_extend_category_list_links() {
+?><span class='cat-links'><?php printf(__('%s', 'codium_extend'), get_the_category_list(' ')) ?></span><?php
+  }
+endif;
+
+if ( ! function_exists( 'codium_extend_tag_list_links' ) ) :
+  function codium_extend_tag_list_links() {
+?><span class='tag-links'><?php printf(__('%s', 'codium_extend'), get_the_tag_list('', ' ')) ?></span><?php
+  }
+endif;
+
+if ( ! function_exists( 'codium_extend_permalink' ) ) :
+  // data after post
+  function codium_extend_permalink() {
+    $posted_in = __( 'Permalink: <a href="%1$s" title="Permalink to %2$s">%1$s</a>.', 'codium_extend' );
+    printf(
+      $posted_in,
+      get_permalink(),
+      the_title_attribute( 'echo=0' )
+    );
+  }
+endif;
+
+if ( ! function_exists( 'codium_extend_print_datetime' ) ) :
+  function codium_extend_print_datetime() {
+    printf('%1$s %2$s', the_date('Y-m-d', '', '', false), get_the_time());
+  }
+endif;
 
 // Widgets plugin: intializes the plugin after the widgets above have passed snuff
 function codium_extend_widgets_init() {
-
     register_sidebar(array(
     'name' => 'SidebarTop',
-    'description' => 'Top sidebar',
+    'description'   => 'Top sidebar',
     'id'            => 'sidebartop',
-    'before_widget'  =>   "\n\t\t\t" . '<li id="%1$s" class="widget %2$s"><div class="widgetblock">',
-    'after_widget'   =>   "\n\t\t\t</div></li>\n",
-    'before_title'   =>   "\n\t\t\t\t". '<div class="widgettitleb"><h3 class="widgettitle">',
-    'after_title'    =>   "</h3></div>\n" .''
+    'before_widget' =>   "\n    " . '<li id="%1$s" class="widget %2$s"><div class="widgetblock">',
+    'after_widget'  =>   "\n    " . "</div></li>\n",
+    'before_title'  =>   "\n      ". '<div class="widgettitleb"><h3 class="widgettitle">',
+    'after_title'   =>   "</h3></div>\n" .''
     ));
-
-    register_sidebar(array(
-    'name' => 'SidebarBottom',
-    'description' => 'Bottom sidebar',
-    'id'            => 'sidebarbottom',
-    'before_widget'  =>   "\n\t\t\t" . '<li id="%1$s" class="widget %2$s"><div class="widgetblock">',
-    'after_widget'   =>   "\n\t\t\t</div></li>\n",
-    'before_title'   =>   "\n\t\t\t\t". '<div class="widgettitleb"><h3 class="widgettitle">',
-    'after_title'    =>   "</h3></div>\n" .''
-    ));
-
   }
-
-
 
 // Runs our code at the end to check that everything needed has loaded
 add_action( 'widgets_init', 'codium_extend_widgets_init' );
@@ -307,84 +323,77 @@ add_filter( 'archive_meta', 'wpautop' );
 add_action('wp_footer', 'footer_link');
 
 function footer_link() {
-if ( is_front_page() && !is_paged()) {
-  $anchorthemeowner='<a href="http://codiumextend.code-2-reduction.fr/" title="code reduction" target="blank">code reduction</a>';
+  if ( is_front_page() && !is_paged()) {
+    $anchorthemeowner='<a href="http://codiumextend.code-2-reduction.fr/" title="code reduction" target="blank">code reduction</a>';
     $textfooter = __('Proudly powered by <a href="http://www.wordpress.org">WordPress</a> and designed by ', 'codium_extend' );
-    $content = '<div id="footerlink"><div class="alignright"><p>' .$textfooter. $anchorthemeowner.'</p></div><div class="clear"></div></div></div>';
+    $content = '<div id="footerlink">' . "\n  ". '<div class="alignright"><p>' .$textfooter. $anchorthemeowner.'</p></div>' . "\n" . '</div>' . "\n";
     echo $content;
-} else {
-  $textfooter = __('Proudly powered by <a href="http://www.wordpress.org">WordPress</a>', 'codium_extend' );
-    $content = '<div id="footerlink"><div class="alignright"><p>' .$textfooter.'</p></div><div class="clear"></div></div></div>';
+  } else {
+    $textfooter = __('Proudly powered by <a href="http://www.wordpress.org">WordPress</a>', 'codium_extend' );
+    $content = '<div id="footerlink">' . "\n  " . '<div class="alignright"><p>' .$textfooter.'</p></div>' . "\n" . '</div>' . "\n";
     echo $content;
-}
+  }
 }
 
 //Remove <p> in excerpt
 function codium_extend_strip_para_tags ($content) {
-if ( is_home() && ($paged < 2 )) {
-  $content = str_replace( '<p>', '', $content );
-  $content = str_replace( '</p>', '', $content );
-  return $content;
-}
+  if ( is_home() && ($paged < 2 )) {
+    $content = str_replace( '<p>', '', $content );
+    $content = str_replace( '</p>', '', $content );
+    return $content;
+  }
 }
 
 if ( ! function_exists( 'codium_extend_comment' ) ) :
 //Comment function
 function codium_extend_comment($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment;
+  $GLOBALS['comment'] = $comment;
   switch ( $comment->comment_type ) :
-    case '' :
-  ?>
-   <li id="comment-<?php comment_ID() ?>" <?php comment_class(); ?>>
-      <div class="comment-author vcard">
-        <?php echo get_avatar( $comment, 48 ); ?>
-    <?php printf(__('<div class="fn">%s</div> ', 'codium_extend'), get_comment_author_link()) ?>
-      </div>
+    case '' : ?>
+  <li id="comment-<?php comment_ID() ?>" <?php comment_class(); ?>>
+    <div class="comment-author vcard">
+      <?php echo get_avatar( $comment, 48 ); ?>
+      <?php printf(__('<div class="fn">%s</div> ', 'codium_extend'), get_comment_author_link()) ?>
+    </div>
 
-      <?php if ($comment->comment_approved == '0') : ?>
-         <em><?php _e('Your comment is in moderation.', 'codium_extend') ?></em>
-         <br />
-      <?php endif; ?>
+    <?php if ($comment->comment_approved == '0') : ?>
+       <em><?php _e('Your comment is in moderation.', 'codium_extend') ?></em>
+       <br>
+    <?php endif; ?>
 
-      <div class="comment-meta"><?php printf(__('%1$s - %2$s <span class="meta-sep">|</span> <a href="%3$s" title="Permalink to this comment">Permalink</a>', 'codium_extend'),
-                    get_comment_date(),
-                    get_comment_time(),
-                    '#comment-' . get_comment_ID() );
-                    edit_comment_link(__('Edit', 'codium_extend'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>'); ?></div>
+    <div class="comment-meta"><?php printf(__('%1$s - %2$s <span class="meta-sep">|</span> <a href="%3$s" title="Permalink to this comment">Permalink</a>', 'codium_extend'),
+        aget_comment_date(), get_comment_time(), '#comment-' . get_comment_ID() );
+        edit_comment_link(__('Edit', 'codium_extend'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>'); ?></div>
     <div class="clear"></div>
 
-      <div class="comment-body"><?php comment_text(); ?></div>
-      <div class="reply">
-         <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-      </div>
-      <?php
-      break;
-    case 'pingback'  :
-    case 'trackback' :
-  ?>
-  <li class="post pingback">
-    <p><?php _e( 'Pingback:', 'codium_extend' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'codium_extend' ), ' ' ); ?></p>
-  <?php
-      break;
-  endswitch;
+    <div class="comment-body"><?php comment_text(); ?></div>
+    <div class="reply">
+       <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+    </div>
+    <?php
+    break;
+  case 'pingback'  :
+  case 'trackback' :
+?>
+<li class="post pingback">
+  <p><?php _e( 'Pingback:', 'codium_extend' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'codium_extend' ), ' ' ); ?></p>
+<?php
+    break;
+endswitch;
 }
 endif;
 
 //custom menu support
 add_action( 'init', 'codium_extend_register_my_menu' );
-
 function codium_extend_register_my_menu() {
-  register_nav_menu( 'primary-menu', __( 'Primary Menu', 'codium_extend' ) );
+  register_nav_menu( 'main-menu', __( 'Main Menu', 'codium_extend' ) );
 }
 
 //font for the Title
-function codium_extend__google_font() {
-?>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin' rel='stylesheet' type='text/css'>
+function codium_extend__google_font() { ?>
+  <link href="//fonts.googleapis.com/css?family=PT+Sans&amp;subset=latin" rel="stylesheet">
 <?php
 }
 
 add_action('wp_head', 'codium_extend__google_font');
-
-
 ?>
