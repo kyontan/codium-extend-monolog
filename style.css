@@ -46,16 +46,16 @@ header { margin: 4px 0 10px; padding: 0; background: transparent }
 #description { color: #444; font-size: 1.3em; margin: .2em 0; }
 
 /* Navigation */
-#access { background: #f1f2f4; font-size: 1.5em; width: 100%; margin: 0 0 1em; }
-#access ul { display: -webkit-flex; display: flex; margin: 0; padding-left: 0; list-style: none; }
-#access li { -webkit-flex: 1; flex: 1; text-align: center; }
-#access a { color: #444; display: block; line-height: 40px; text-decoration: none; padding: 0 10px; }
-#access li:hover > a { background: #444; background: rgba(0, 0, 0, .7); color: #fff; transition: all .18s ease-out; }
-#access ul li.current_page_item > a,
-#access ul li.current-menu-ancestor > a,
-#access ul li.current-menu-item > a,
-#access ul li.current-menu-parent > a,
-#access ul li a:hover, #access ul li a:focus { background: #444; background: rgba(0, 0, 0, .7); color: #fff; }
+nav { background: #f1f2f4; font-size: 1.5em; width: 100%; margin: 0 0 1em; }
+nav ul { display: -webkit-flex; display: flex; margin: 0; padding-left: 0; list-style: none; }
+nav li { -webkit-flex: 1; flex: 1; text-align: center; }
+nav a { color: #444; display: block; line-height: 40px; text-decoration: none; padding: 0 10px; }
+nav li:hover > a { background: #444; background: rgba(0, 0, 0, .7); color: #fff; transition: all .18s ease-out; }
+nav ul li.current_page_item > a,
+nav ul li.current-menu-ancestor > a,
+nav ul li.current-menu-item > a,
+nav ul li.current-menu-parent > a,
+nav ul li a:hover, nav ul li a:focus { background: #444; background: rgba(0, 0, 0, .7); color: #fff; }
 
 /* Layout */
 h1 { font-size: 2.7em; }
@@ -281,7 +281,7 @@ aside p { margin: 1em 0; }
   body { width: 768px; font-size: 56%; }
 
   main { width: 492px; }
-  aside#sidebar, #access { width: 236px; }
+  aside#sidebar, nav { width: 236px; }
 }
 
 
@@ -296,7 +296,7 @@ aside p { margin: 1em 0; }
   aside#sidebar, main { width: 95%; margin-left: 2%; }
 
   aside#sidebar { float: left; }
-  #access { float: none; width: auto; }
+  nav { float: none; width: auto; }
 
   .wp-pagenavi, .mobileoff { display: none }
   .navigation_mobile { display: inline }

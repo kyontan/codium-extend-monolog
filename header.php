@@ -14,9 +14,11 @@
   <h1 id="blog-title" class="blogtitle"><a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php bloginfo('name') ?>"><?php bloginfo('name') ?></a></h1>
   <div class="description"><?php bloginfo('description'); ?> </div>
 </header>
+
 <div class="clear"></div>
+
 <div id="wrapper" class="container">
-  <div id="access">
+  <nav>
     <?php wp_nav_menu(array( 'container_class' => 'menu-header', 'theme_location' => 'main-menu',)); ?>
-  </div><!--  #access -->
+  </nav>
 <div class="clear"></div>
