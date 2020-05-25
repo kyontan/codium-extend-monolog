@@ -46,10 +46,13 @@ header { margin: 4px 0 10px; padding: 0; background: transparent }
 #description { color: #444; font-size: 1.3em; margin: .2em 0; }
 
 /* Navigation */
+nav#nav-head { display: none; }
+nav#nav-side { display: initial; }
 nav { background: #f1f2f4; font-size: 1.5em; width: 100%; margin: 0 0 1em; }
-nav ul { display: -webkit-flex; display: flex; margin: 0; padding-left: 0; list-style: none; }
-nav li { -webkit-flex: 1; flex: 1; text-align: center; }
-nav a { color: #444; display: block; line-height: 40px; text-decoration: none; padding: 0 10px; }
+nav ul { display: flex; margin: 0; padding-left: 0; list-style: none; }
+nav li { flex: 1; text-align: center; }
+nav li a,
+nav li a:visited { color: #444; display: block; line-height: 40px; text-decoration: none; padding: 0 10px; }
 nav li:hover > a { background: #444; background: rgba(0, 0, 0, .7); color: #fff; transition: all .18s ease-out; }
 nav ul li.current_page_item > a,
 nav ul li.current-menu-ancestor > a,
@@ -74,15 +77,15 @@ code { font-family: 'Andale mono', 'Source Code Pro', 'Consolas', monospace; }
 #footerlink { color: #bbb; margin: 0 .5em 2em .5em; clear: both;  text-align: left; font-size: 1.1em; line-height: 1em; }
 
 /* sidebar */
-#sidebar { overflow: hidden; background-color: #fff }
-#sidebar h3 { font-size: 1.5em; font-weight: normal; letter-spacing: -.03em; margin: 0; }
-#sidebar li { margin: 0; padding: 0; }
-#sidebar ul li ul li { padding-top: .5em }
-#sidebar ul li ul li li { margin-left: 1em; padding-top: .5em }
-#sidebar ul { list-style: none; margin: 0; padding: 0 }
-#sidebar a { color: #54b9fd; }
-#sidebar a:visited { color: #6ba2c7; }
-#sidebar a:hover, #sidebar a:focus { color: #0299FF; }
+aside { overflow: hidden; background-color: #fff }
+aside h3 { font-size: 1.5em; font-weight: normal; letter-spacing: -.03em; margin: 0; }
+aside li { margin: 0; padding: 0; }
+aside ul li ul li { padding-top: .5em }
+aside ul li ul li li { margin-left: 1em; padding-top: .5em }
+aside ul { list-style: none; margin: 0; padding: 0 }
+aside a { color: #54b9fd; }
+aside a:visited { color: #6ba2c7; }
+aside a:hover, aside a:focus { color: #0299FF; }
 
 /* Post area */
 .hentry { font-weight: normal; margin-bottom: 1em }
@@ -174,7 +177,7 @@ div.formcontainer { width: 100% }
 
 /* Error page */
 .four04 p { font-size: 1.2em }
-.four04 #sidebar { clear: right; display: block }
+.four04 aside { clear: right; display: block }
 .four04 { width: 590px; text-align: left }
 
 /* widget */
@@ -249,7 +252,7 @@ body { position: relative; width: 960px; margin: 0 auto; padding: 0; }
 
 /* Base Grid */
 main  { float: left; width: 640px; }
-aside#sidebar, nav { float: right; width: 300px; }
+aside { float: right; width: 300px; }
 aside p { margin: 1em 0; }
 
 @media only screen and (min-width: 960px) {
@@ -281,7 +284,7 @@ aside p { margin: 1em 0; }
   body { width: 768px; font-size: 56%; }
 
   main { width: 492px; }
-  aside#sidebar, nav { width: 236px; }
+  aside { width: 236px; }
 }
 
 
@@ -293,9 +296,13 @@ aside p { margin: 1em 0; }
 @media only screen and (max-width: 767px) {
   body { width: 100%; font-size: 54%; }
   header { margin-left: 2%; }
-  aside#sidebar, main { width: 95%; margin-left: 2%; }
+  aside, main { width: 95%; margin-left: 2%; }
 
-  aside#sidebar { float: left; }
+  aside { float: left; }
+
+  nav#nav-head { display: initial; }
+  nav#nav-side { display: none; }
+
   nav { float: none; width: auto; }
 
   .wp-pagenavi, .mobileoff { display: none }
@@ -314,9 +321,6 @@ aside p { margin: 1em 0; }
 
 /* #Clearing
 ================================================== */
-
-/* Self Clearing Goodness */
-/* .container::after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; } */
 
 /* You can also use a <br class="clear" /> to clear columns */
 .clear {

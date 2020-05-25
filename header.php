@@ -15,10 +15,6 @@
   <div class="description"><?php bloginfo('description'); ?> </div>
 </header>
 
-<div class="clear"></div>
-
-<div id="wrapper" class="container">
-  <nav>
-    <?php wp_nav_menu(array( 'container_class' => 'menu-header', 'theme_location' => 'main-menu',)); ?>
-  </nav>
-<div class="clear"></div>
+<nav id="nav-head">
+  <?php wp_nav_menu(array( 'container_class' => 'menu-header', 'theme_location' => 'main-menu',)); ?>
+</nav>
