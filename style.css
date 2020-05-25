@@ -84,9 +84,6 @@ code { font-family: 'Andale mono', 'Source Code Pro', 'Consolas', monospace; }
 #sidebar a:visited { color: #6ba2c7; }
 #sidebar a:hover, #sidebar a:focus { color: #0299FF; }
 
-/* Misc */
-.clear { clear: both }
-
 /* Post area */
 .hentry { font-weight: normal; margin-bottom: 1em }
 .entry-content { font-size: 1.6em; line-height: 1.8em; text-align: justify; color: #444; margin: auto }
