@@ -3,7 +3,7 @@
 <main>
 
 <?php the_post() ?>
-  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <h2 class="entry-title"><?php the_title(); ?></h2>
     <?php codium_extend_category_list_links() ?>
     <?php codium_extend_tag_list_links() ?>
@@ -17,7 +17,7 @@
 <?php edit_post_link(__('Edit', 'codium_extend'),'<span class="edit-link">','</span>') ?>
 
     </div>
-  </div><!-- .post -->
+  </article>
 
 <?php comments_template(); ?>
 

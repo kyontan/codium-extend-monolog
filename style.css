@@ -173,7 +173,6 @@ div.formcontainer { width: 100% }
 
 /* Archive-all */
 #archive h2.entry-title { font-size: 2.2em; margin-bottom: 0.1em; }
-#archive .archive-meta { border-top: 1px dashed silver; margin-top: 3px; padding: 5px 0; }
 #archive .entry-meta { border-top: none; margin-top: initial; padding-top: initial; }
 #archive span.cat-links a, #archive span.tag-links a { font-size: 1em; }
 

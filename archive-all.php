@@ -9,13 +9,12 @@ Template Name: archives
   <?php $query = new WP_Query('showposts=-1'); ?>
   <?php if ($query->have_posts()) : ?>
   <?php $query->rewind_posts(); while ($query->have_posts()) : $query->the_post(); ?>
-  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div><?php codium_extend_posted_on(); ?></div>
     <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf(__('Link to %s', 'codium_extend'), esc_html(get_the_title(), 1)) ?>" rel="bookmark"><?php the_title() ?></a></h2>
     <?php codium_extend_category_list_links() ?>
     <?php codium_extend_tag_list_links() ?>
-    <div class="archive-meta"></div>
-  </div>
+  </article>
   <?php endwhile; endif ?>
 
   <div class="center">

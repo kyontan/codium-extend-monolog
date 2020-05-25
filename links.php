@@ -8,7 +8,7 @@ Template Name: Links Page
 <main>
 
 <?php the_post() ?>
-  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <h2 class="entry-title"><?php the_title() ?></h2>
     <div class="entry-content">
 <?php the_content() ?>
@@ -19,7 +19,7 @@ Template Name: Links Page
 <?php edit_post_link(__('Edit', 'codium_extend'),'<span class="edit-link">','</span>') ?>
 
     </div>
-  </div><!-- .post -->
+  </article>
 
 <?php comments_template(); ?>
 

@@ -4,8 +4,7 @@
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
 
-  <!-- Begin post -->
-  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div><?php codium_extend_posted_on(); ?></div>
     <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf(__('Permalink to %s', 'codium_extend'), esc_html(get_the_title(), 1)) ?>" rel="bookmark"><?php the_title() ?></a></h2>
     <?php codium_extend_category_list_links() ?>
@@ -19,9 +18,7 @@
     <div class="entry-meta">
       <?php codium_extend_permalink() ?><br>
     </div>
-
-  </div>
-  <!-- End post -->
+  </article>
 
   <div class="linebreak clear"></div>
 
@@ -37,17 +34,13 @@
   </div>
 
 <?php else : ?>
-<div id="post-0" class="post no-results not-found">
+<article id="post-0" class="post no-results not-found">
   <h2 class="entry-title"><?php _e( 'Nothing Found', 'codium_extend' ); ?></h2>
   <div class="entry-content">
     <p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'codium_extend' ); ?></p>
     <?php get_search_form(); ?>
   </div><!-- .entry-content -->
-</div><!-- #post-0 -->
-<script type="text/javascript">
-  // focus on search field after it has loaded
-  document.getElementById('s') && document.getElementById('s').focus();
-</script>
+</article>
 <?php endif; ?>
 
 </main>

@@ -7,10 +7,9 @@
     <div class="nav-next"><?php next_post_link('%link', '%title <span class="meta-nav">&raquo;</span>') ?></div>
   </div>
 
-  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-    <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf(__('Link to %s', 'codium_extend'), esc_html(get_the_title(), 1)) ?>" rel="bookmark"><?php the_title() ?></a></h2>
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div><?php codium_extend_posted_on(); ?></div>
+    <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf(__('Link to %s', 'codium_extend'), esc_html(get_the_title(), 1)) ?>" rel="bookmark"><?php the_title() ?></a></h2>
     <?php codium_extend_category_list_links() ?>
     <?php codium_extend_tag_list_links() ?>
 
@@ -29,7 +28,7 @@
     </div>
 
     <div class="clear"></div>
-  </div><!-- .post -->
+  </article>
 
   <div class="linebreak"></div>
 
