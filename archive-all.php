@@ -22,9 +22,9 @@ Template Name: archives
   <?php if(function_exists('wp_pagenavi')) {
     wp_pagenavi();
   } else { ?>
-    <div class="navigation mobileoff"><p><?php posts_nav_link(); ?></p></div>
+    <div class="navigation mobileoff"><p><?php posts_nav_link(" "); ?></p></div>
   <?php } ?>
-    <div class="navigation_mobile"><p><?php posts_nav_link(); ?></p></div>
+    <div class="navigation_mobile"><p><?php posts_nav_link(" "); ?></p></div>
   </div>
 </main>
 
