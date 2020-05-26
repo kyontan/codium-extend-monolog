@@ -172,9 +172,7 @@ div.formcontainer { width: 100% }
 .comments-navigation a:hover, .comments-navigation a:focus { background: #444; color: #FFF; text-decoration: none; outline: 0 }
 
 /* Archive-all */
-#archive h2.entry-title { font-size: 2.2em; margin-bottom: 0.1em; }
-#archive .entry-meta { border-top: none; margin-top: initial; padding-top: initial; }
-#archive span.cat-links a, #archive span.tag-links a { font-size: 1em; }
+#archive h2.entry-title { font-size: 2.2em; }
 
 /* Error page */
 .four04 p { font-size: 1.2em }
@@ -327,6 +325,8 @@ aside p { margin: 1em 0; }
 
   .wp-pagenavi { display: none }
   #footerlink { margin-bottom: 0; }
+
+  #archive h2.entry-title { font-size: 1.6em; }
 }
 
 
