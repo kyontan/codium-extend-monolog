@@ -70,7 +70,7 @@ codium_extend is free software: you can redistribute it and/or modify it under t
         wp_enqueue_script( 'comment-reply' );
 
       // Loads our main stylesheet.
-      wp_enqueue_style( 'codium_extend-style', get_stylesheet_uri(), array(), '2014-06-30' );
+      wp_enqueue_style( 'codium_extend-style', get_stylesheet_uri(), array(), '2020-05-26' );
     }
   endif; // codium_scripts_styles
   add_action( 'wp_enqueue_scripts', 'codium_extend_scripts_styles' );
@@ -390,4 +390,17 @@ function codium_extend__google_font() { ?>
 }
 
 add_action('wp_head', 'codium_extend__google_font');
+?>
+
+<?php
+
+add_filter( 'scriptlesssocialsharing_locations', 'prefix_change_sss_locations' );
+function prefix_change_sss_locations( $locations ) {
+  // scriptlesssocialsharing sets priority to 99
+  // to make scriptlesssocialsharing to locate above ads, lowering priority
+  $locations['after']['priority'] = 5;
+
+  return $locations;
+}
+
 ?>
