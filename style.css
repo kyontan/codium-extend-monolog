@@ -189,6 +189,7 @@ div.formcontainer { width: 100% }
 
 /* date */
 .entry-date { color: #999; margin: 0; font-size: 1rem; }
+.entry-date-wrapper { margin-bottom: .5em; }
 
 /* Gallery Shorcode */
 .gallery { margin: 0 auto; padding: 10px 0 }

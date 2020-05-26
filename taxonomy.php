@@ -10,8 +10,8 @@
   <span <?php body_class('cat-links'); ?>><?php printf(__('%s', 'codium_extend'), get_the_category_list(' ')) ?></span>
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div><?php codium_extend_posted_on(); ?></div>
     <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf(__('Link to %s', 'codium_extend'), esc_html(get_the_title(), 1)) ?>" rel="bookmark"><?php the_title() ?></a></h2>
+    <div class="entry-date-wrapper"><?php codium_extend_posted_on(); ?></div>
     <?php codium_extend_category_list_links() ?>
     <?php codium_extend_tag_list_links() ?>
 
