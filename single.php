@@ -2,10 +2,6 @@
 
 <main>
   <?php the_post(); ?>
-  <div id="nav-above" class="navigation cf">
-    <div class="nav-previous"><?php previous_post_link('%link', '<span class="meta-nav">&laquo;</span> %title') ?></div>
-    <div class="nav-next"><?php next_post_link('%link', '%title <span class="meta-nav">&raquo;</span>') ?></div>
-  </div>
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf(__('Link to %s', 'codium_extend'), esc_html(get_the_title(), 1)) ?>" rel="bookmark"><?php the_title() ?></a></h2>
